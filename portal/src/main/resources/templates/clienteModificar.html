@@ -1,0 +1,74 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>Modificar Cliente</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+         <link rel="stylesheet" href="/css/portal.css">
+    </head>
+    <body>
+        <div>
+            <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <a th:href= "@{/index}" <button type="button" class="navbar-brand">INICIO</button></a>
+                </div>   
+            </nav>
+        </div>
+
+        <br>
+        <div class="container">
+
+            <h3>Modificar Cliente</h3>
+            
+            <form th:action="@{/cliente/modifica/__${cliente.id}__}" method="POST">
+                
+                 <div th:if="${error != null}" class="card text-white bg-danger mb-3 mensajeError" >
+                    <div class="card-body">
+                        <h5 class="card-title">Error</h5>
+                        <p class="card-text" th:text="${error}"></p>
+                    </div>
+                </div>
+               
+                <div th:if="${exito != null}" class="card text-white bg-success mb-3 mt-3 mensajeExito" >
+                    <div class="card-body">
+                        <h5 class="card-title">Exito</h5>
+                        <p class="card-text" th:text="${exito}"></p>
+                    </div>
+                </div>
+                
+                <input hidden th:value="${cliente.id}" name="id">
+                
+               <div>
+                    <br>
+                    <label for="disabledTextInput" class="form-label">Nombre y Apellido</label>
+                    <input th:value="${cliente.nombre}" type="text" class="form-control" name="nombre">
+                </div>
+                <div>
+                    <br>
+                    <label for="disabledTextInput" class="form-label">DNI</label>
+                    <input th:value="${cliente.dni}" type="text" class="form-control" name="dni">
+                </div>
+                <div>
+                    <br>
+                    <label for="disabledTextInput" class="form-label">Telefono</label>
+                    <input th:value="${cliente.telefono}" type="text" class="form-control" name="telefono">
+                </div>
+                <div>
+                    <br>
+                    <label for="disabledTextInput" class="form-label">Email</label>
+                    <input th:value="${cliente.email}" type="text" class="form-control" name="email">
+                </div>
+                <div>
+                    <br>
+                    <label for="disabledTextInput" class="form-label">Comentario</label>
+                    <input th:value="${cliente.observacion}" type="textarea" class="form-control" name="observacion">
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Modificar</button>
+                <a th:href="@{/cliente/listar}" type="button" class="btn btn-primary">Volver</a>
+            </form>
+            
+        </div>
+    </body>
+</html>
+

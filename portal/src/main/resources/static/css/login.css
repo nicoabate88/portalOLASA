@@ -1,0 +1,9 @@
+.form-control {
+    width: 400px;
+}
+
+#login {
+    display: flex;
+    justify-content: center;
+   align-items: center;
+}

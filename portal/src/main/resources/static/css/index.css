@@ -1,0 +1,45 @@
+.contenedor-columnas{
+    width: 100%;
+    margin: auto;
+    margin-bottom: 75px;
+
+}
+.columnasx2{
+    width: 50%;
+    float: left;
+    padding: 45px 45px;
+    box-sizing: border-box;
+    margin: 0 auto;
+   
+    text-align-last: center;
+}
+
+.columnasx3{
+    width: 33.333%;
+    float: left;
+    padding: 45px 45px;
+    box-sizing: border-box;
+    margin: auto;
+    text-align: center;
+}
+#pos-columnasx2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#col-usuario {
+    color: #1e3120;
+}
+#col-cliente {
+    color: #0d347e; 
+}
+#col-solicitud {
+    color: #d83131;
+}
+#col-orden {
+    color: #94961f;
+}
+#col-serv {
+    color: #d19512;
+}
